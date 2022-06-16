@@ -31,6 +31,7 @@ HOST_CFLAGS   := -pipe -std=c99 -O2 \
                  -fdata-sections \
                  -fstack-protector-all \
                  -ftabstop=4 \
+                 -fsigned-char \
                  -Wempty-body -Wall -Winit-self -Wswitch-enum -Wundef \
                  -Waddress -Wmissing-field-initializers -Wconversion \
                  -Wredundant-decls -Wvla -Wstack-protector -Wshadow \
