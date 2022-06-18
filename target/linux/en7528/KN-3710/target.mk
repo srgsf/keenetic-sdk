@@ -9,7 +9,11 @@ SUBTARGET:=KN-3710
 DESCRIPTION:=Sprinter
 BOARD_CPPFLAGS += -D__KN_3710__
 DEFAULT_PACKAGES += ndm-mod-interface-extras
+FEATURES += usb usbstorage extended_storage binary_packages
+
+BINARY_PACKAGES:=sdk/storage
 
 define Target/Description
 	Build firmware images for KN-3710
 endef
+

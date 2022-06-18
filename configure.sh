@@ -422,6 +422,15 @@ fi
 rm -f .config
 
 board_path=$(find target/linux -name $1)
+if [ -f ${board_path}/target.mk ]; then
+  features=$(grep FEATURES ${board_path}/target.mk   | cut -d = -f 2)
+	  for p in $features; do
+		  if [ $p = "binary_packages" ]; then
+			  cp -r target/sdk/package/* package
+			  break
+			fi
+		done
+fi
 if [ -f ${board_path}/ndwrt.config ]; then
 	cfg_copy "${board_path}/ndwrt.config"
 	exit $?
